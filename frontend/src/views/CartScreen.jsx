@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart } from "../redux/actions/cart-actions";
+import { addToCart, removeFromCart } from "../redux/actions/cart-actions";
 import MessageBox from "./../components/MessageBox";
 
 export default function CartScreen(props) {
@@ -22,6 +22,7 @@ export default function CartScreen(props) {
   // eslint-disable-next-line no-unused-vars
   const removeFromCartHandler = (id) => {
     // delete action
+    dispatch(removeFromCart(id))
   };
 
   const checkoutHandler = () => {

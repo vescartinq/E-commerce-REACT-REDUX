@@ -1,10 +1,10 @@
-import Axios from 'axios';
-import actionType from '../actions/action-types';
+import Axios from "axios";
+import actionTypes from "../actions/action-types";
 
 export const addToCart = (productId, qty) => async (dispatch, getState) => {
   const { data } = await Axios.get(`/api/products/${productId}`);
   dispatch({
-    type: actionType.CART_ADD_ITEM,
+    type: actionTypes.CART_ADD_ITEM,
     payload: {
       name: data.name,
       image: data.image,
@@ -14,5 +14,13 @@ export const addToCart = (productId, qty) => async (dispatch, getState) => {
       qty,
     },
   });
-  localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+  localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
+};
+
+export const removeFromCart = (productId) => (dispatch, getState) => {
+  dispatch({
+    type: actionTypes.CART_REMOVE_ITEM,
+    payload: productId,
+  });
+  localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
 };

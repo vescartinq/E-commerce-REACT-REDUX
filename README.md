@@ -1,6 +1,6 @@
 # E-commerce-REACT-REDUX
 
-Personal learning project to build an ecommerce website, with the objective of learn the essential tools and skills to design, develop and deploy a fully-function website using MERN stack.
+Personal learning project to build an ecommerce website, with the objective to learn the essential tools and skills to design, develop and deploy a fully-functional website using MERN stack.
 
 The stack technologies used are: 
 - HTML and CSS (grid, flex and responsive design)

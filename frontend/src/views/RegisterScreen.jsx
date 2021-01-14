@@ -22,7 +22,7 @@ export default function RegisterScreen(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      alert('Password and confirm password are not match');
+      alert("Ups, password and confirm password don't match");
     } else {
       dispatch(register(name, email, password));
     }
@@ -33,7 +33,7 @@ export default function RegisterScreen(props) {
       props.history.push(redirect);
     }
   }, [props.history, redirect, userInfo]);
-  
+
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>

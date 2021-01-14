@@ -1,10 +1,12 @@
-import actionTypes from '../actions/action-types';
+import actionTypes from "../actions/action-types";
 
-export const cartReducer = (state = { cartItems: [] }, action={}) => {
+export const cartReducer = (state = { cartItems: [] }, action = {}) => {
   switch (action.type) {
     case actionTypes.CART_ADD_ITEM: {
       const item = action.payload;
-      const existItem = state.cartItems.find((findingItem) => findingItem.product === item.product);
+      const existItem = state.cartItems.find(
+        (findingItem) => findingItem.product === item.product
+      );
       if (existItem) {
         return {
           ...state,
@@ -19,8 +21,12 @@ export const cartReducer = (state = { cartItems: [] }, action={}) => {
     case actionTypes.CART_REMOVE_ITEM:
       return {
         ...state,
-        cartItems: state.cartItems.filter((filteredItem) => filteredItem.product !== action.payload),
+        cartItems: state.cartItems.filter(
+          (filteredItem) => filteredItem.product !== action.payload
+        ),
       };
+    case actionTypes.CART_SAVE_SHIPPING_ADDRESS:
+      return { ...state, shippingAddress: action.payload };
     default:
       return state;
   }

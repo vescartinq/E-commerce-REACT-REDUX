@@ -8,6 +8,7 @@ import ProductScreen from './views/ProductScreen';
 import RegisterScreen from './views/RegisterScreen';
 import SigninScreen from './views/SigninScreen';
 import ShippingAddressScreen from './views/ShippingAddressScreen';
+import PaymentMethodScreen from './views/PaymentMethodScreen';
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -53,11 +54,12 @@ function App() {
           </div>
         </header>
         <main>
-          <Route path="/cart/:id?" component={CartScreen}></Route>
-          <Route path="/product/:id" component={ProductScreen}></Route>
-          <Route path="/signin" component={SigninScreen}></Route>
-          <Route path="/register" component={RegisterScreen}></Route>
-          <Route path="/shipping" component={ShippingAddressScreen}></Route>
+          <Route path="/cart/:id?" component={CartScreen}/>
+          <Route path="/product/:id" component={ProductScreen}/>
+          <Route path="/signin" component={SigninScreen}/>
+          <Route path="/register" component={RegisterScreen}/>
+          <Route path="/shipping" component={ShippingAddressScreen}/>
+          <Route path="/payment" component={PaymentMethodScreen}/>
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
         <footer className="row center">All right reserved</footer>

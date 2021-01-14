@@ -183,6 +183,9 @@ margin: 0.1rem;
 }
 
 /* ALERT */
+.loading {
+  display: block !important;
+}
 .success {
     color: #20a020;
   }

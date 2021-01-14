@@ -1,29 +1,36 @@
 /* eslint-disable no-unused-vars */
-import { createStore,compose,applyMiddleware, combineReducers} from 'redux';
-import thunk from 'redux-thunk';
-import { cartReducer } from './redux/reducers/cartReducer';
-import { productDetailsReducer, productListReducer } from './redux/reducers/productReducer';
-import { userSigninReducer } from './redux/reducers/userReducer';
+import { createStore, compose, applyMiddleware, combineReducers } from "redux";
+import thunk from "redux-thunk";
+import { cartReducer } from "./redux/reducers/cartReducer";
+import {
+  productDetailsReducer,
+  productListReducer,
+} from "./redux/reducers/productReducer";
+import {
+  userRegisterReducer,
+  userSigninReducer,
+} from "./redux/reducers/userReducer";
 
 const initialState = {
   userSignin: {
-    userInfo: localStorage.getItem('userInfo')
-      ? JSON.parse(localStorage.getItem('userInfo'))
+    userInfo: localStorage.getItem("userInfo")
+      ? JSON.parse(localStorage.getItem("userInfo"))
       : null,
   },
   cart: {
-    cartItems: localStorage.getItem('cartItems')
-      ? JSON.parse(localStorage.getItem('cartItems'))
+    cartItems: localStorage.getItem("cartItems")
+      ? JSON.parse(localStorage.getItem("cartItems"))
       : [],
   },
 };
 
 const reducer = combineReducers({
-    productList: productListReducer,
-    productDetails: productDetailsReducer,
-    cart: cartReducer,
-    userSignin: userSigninReducer,
-  });
+  productList: productListReducer,
+  productDetails: productDetailsReducer,
+  cart: cartReducer,
+  userSignin: userSigninReducer,
+  userRegister: userRegisterReducer,
+});
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(

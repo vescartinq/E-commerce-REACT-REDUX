@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saveShippingAddress } from "../redux/actions/cart-actions";
 import CheckoutSteps from "../components/CheckoutSteps";
+import { Link } from "react-router-dom";
 
 export default function ShippingAddressScreen(props) {
   const userSignin = useSelector((state) => state.userSignin);
@@ -27,6 +28,7 @@ export default function ShippingAddressScreen(props) {
   return (
     <div>
       <CheckoutSteps step1 step2></CheckoutSteps>
+      <Link to="/cart"><i className="fa fa-chevron-left"></i> PREVIOUS PAGE</Link>
       <form className="form" onSubmit={submitHandler}>
         <div>
           <h1>Shipping Address</h1>

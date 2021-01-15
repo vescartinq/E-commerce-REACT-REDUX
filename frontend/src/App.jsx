@@ -10,6 +10,7 @@ import OrderHistoryScreen from "./views/OrderHistoryScreen";
 import OrderScreen from "./views/OrderScreen";
 import ProductScreen from "./views/ProductScreen";
 import ProductListScreen from "./views/ProductListScreen";
+import ProductEditScreen from './views/ProductEditScreen';
 import ProfileScreen from "./views/ProfileScreen";
 import RegisterScreen from "./views/RegisterScreen";
 import SigninScreen from "./views/SigninScreen";
@@ -89,7 +90,8 @@ function App() {
         </header>
         <main>
           <Route path="/cart/:id?" component={CartScreen} />
-          <Route path="/product/:id" component={ProductScreen} />
+          <Route path="/product/:id" component={ProductScreen} exact/>
+          <Route path="/product/:id/edit" component={ProductEditScreen} exact/>
           <Route path="/signin" component={SigninScreen} />
           <Route path="/register" component={RegisterScreen} />
           <Route path="/shipping" component={ShippingAddressScreen} />

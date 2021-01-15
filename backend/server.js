@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 import express from 'express';
 import mongoose from 'mongoose';
 import productRouter from './routers/productRouter.js';
 import userRouter from './routers/userRouter.js';
+import orderRouter from './routers/orderRouter.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -21,11 +23,12 @@ mongoose.connect(dbUrl, {
 
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
+app.use('/api/orders', orderRouter);
 app.get('/', (req, res) => {
   res.send('Server working well and hard');
 });
 
-// eslint-disable-next-line no-unused-vars
+
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });

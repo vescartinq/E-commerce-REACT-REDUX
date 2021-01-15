@@ -4,9 +4,13 @@ import { BrowserRouter, Link, Route } from 'react-router-dom';
 import { signout } from './redux/actions/user-actions';
 import CartScreen from './views/CartScreen';
 import HomeScreen from './views/HomeScreen';
+import OrderScreen from './views/OrderScreen';
 import ProductScreen from './views/ProductScreen';
 import RegisterScreen from './views/RegisterScreen';
 import SigninScreen from './views/SigninScreen';
+import ShippingAddressScreen from './views/ShippingAddressScreen';
+import PaymentMethodScreen from './views/PaymentMethodScreen';
+import PlaceOrderScreen from './views/PlaceOrderScreen';
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -52,10 +56,14 @@ function App() {
           </div>
         </header>
         <main>
-          <Route path="/cart/:id?" component={CartScreen}></Route>
-          <Route path="/product/:id" component={ProductScreen}></Route>
-          <Route path="/signin" component={SigninScreen}></Route>
-          <Route path="/register" component={RegisterScreen}></Route>
+          <Route path="/cart/:id?" component={CartScreen}/>
+          <Route path="/product/:id" component={ProductScreen}/>
+          <Route path="/signin" component={SigninScreen}/>
+          <Route path="/register" component={RegisterScreen}/>
+          <Route path="/shipping" component={ShippingAddressScreen}/>
+          <Route path="/payment" component={PaymentMethodScreen}/>
+          <Route path="/placeorder" component={PlaceOrderScreen}/>
+          <Route path="/order/:id" component={OrderScreen}></Route>
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
         <footer className="row center">All right reserved</footer>

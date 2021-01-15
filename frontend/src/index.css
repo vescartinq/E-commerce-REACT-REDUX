@@ -270,7 +270,7 @@ margin: 0.1rem;
   margin-left: 5vw;
 }
 .table tbody tr:nth-of-type(odd) {
-  background-color: #f4f4f4;
+  background-color: #cecece;
 }
 .table td,
 .table th {

@@ -36,6 +36,8 @@ export const userDetailsReducer = (state = { loading: true }, action={}) => {
       return { loading: false, user: action.payload };
     case actionTypes.USER_DETAILS_FAIL:
       return { loading: false, error: action.payload };
+      case actionTypes.USER_DETAILS_RESET:
+      return { loading: true };
     default:
       return state;
   }
@@ -56,6 +58,21 @@ export const userUpdateProfileReducer = (state = {}, action={}) => {
   }
 };
 
+export const userUpdateReducer = (state = {}, action) => {
+  switch (action.type) {
+    case actionTypes.USER_UPDATE_REQUEST:
+      return { loading: true };
+    case actionTypes.USER_UPDATE_SUCCESS:
+      return { loading: false, success: true };
+    case actionTypes.USER_UPDATE_FAIL:
+      return { loading: false, error: action.payload };
+    case actionTypes.USER_UPDATE_RESET:
+      return {};
+    default:
+      return state;
+  }
+};
+
 export const userListReducer = (state = { loading: true }, action) => {
   switch (action.type) {
     case actionTypes.USER_LIST_REQUEST:
@@ -64,6 +81,21 @@ export const userListReducer = (state = { loading: true }, action) => {
       return { loading: false, users: action.payload };
     case actionTypes.USER_LIST_FAIL:
       return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const userDeleteReducer = (state = {}, action) => {
+  switch (action.type) {
+    case actionTypes.USER_DELETE_REQUEST:
+      return { loading: true };
+    case actionTypes.USER_DELETE_SUCCESS:
+      return { loading: false, success: true };
+    case actionTypes.USER_DELETE_FAIL:
+      return { loading: false, error: action.payload };
+    case actionTypes.USER_DELETE_RESET:
+      return {};
     default:
       return state;
   }

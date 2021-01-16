@@ -9,6 +9,7 @@ import HomeScreen from "./views/HomeScreen";
 import OrderHistoryScreen from "./views/OrderHistoryScreen";
 import OrderScreen from "./views/OrderScreen";
 import OrderListScreen from './views/OrderListScreen';
+import UserListScreen from './views/UserListScreen';
 import ProductScreen from "./views/ProductScreen";
 import ProductListScreen from "./views/ProductListScreen";
 import ProductEditScreen from './views/ProductEditScreen';
@@ -103,6 +104,7 @@ function App() {
           <PrivateRoute path="/profile" component={ProfileScreen} />
           <AdminRoute path="/productlist" component={ProductListScreen} />
           <AdminRoute path="/orderlist" component={OrderListScreen} />
+          <AdminRoute path="/userlist" component={UserListScreen} />
           <Route path="/" component={HomeScreen} exact />
         </main>
         <footer className="row center">All right reserved</footer>

@@ -47,7 +47,7 @@ export default function ProductListScreen(props) {
 
   const createHandler = () => {
     dispatch(createProduct());
-    location.reload();
+    window.location.reload();
   };
   
   return (

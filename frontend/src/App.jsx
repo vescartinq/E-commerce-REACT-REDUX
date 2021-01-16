@@ -10,6 +10,7 @@ import OrderHistoryScreen from "./views/OrderHistoryScreen";
 import OrderScreen from "./views/OrderScreen";
 import OrderListScreen from './views/OrderListScreen';
 import UserListScreen from './views/UserListScreen';
+import UserEditScreen from './views/UserEditScreen';
 import ProductScreen from "./views/ProductScreen";
 import ProductListScreen from "./views/ProductListScreen";
 import ProductEditScreen from './views/ProductEditScreen';
@@ -105,6 +106,7 @@ function App() {
           <AdminRoute path="/productlist" component={ProductListScreen} />
           <AdminRoute path="/orderlist" component={OrderListScreen} />
           <AdminRoute path="/userlist" component={UserListScreen} />
+          <AdminRoute path="/user/:id/edit" component={UserEditScreen} />
           <Route path="/" component={HomeScreen} exact />
         </main>
         <footer className="row center">All right reserved</footer>

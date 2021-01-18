@@ -139,6 +139,9 @@ a.brand {
 .col-2 {
   flex: 2 1 50rem;
 }
+.col-3 {
+  flex: 2 1 150rem;
+}
 .min-30 {
   min-width: 30rem;
 }
@@ -280,4 +283,23 @@ margin: 0.1rem;
 }
 .table button {
   margin: 0 0.2rem;
+}
+
+
+/* SEARCH */
+.search button {
+  border-radius: 0 0.5rem 0.5rem 0;
+  border-right: none;
+  margin-right: 0.5rem;
+}
+.search input {
+  border-radius: 0.5rem 0 0 0.5rem;
+  border-right: none;
+  margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 570px) {
+  .search{
+    display: none;
+  }
 }

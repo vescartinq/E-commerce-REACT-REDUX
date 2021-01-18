@@ -20,6 +20,8 @@ import SigninScreen from "./views/SigninScreen";
 import ShippingAddressScreen from "./views/ShippingAddressScreen";
 import PaymentMethodScreen from "./views/PaymentMethodScreen";
 import PlaceOrderScreen from "./views/PlaceOrderScreen";
+import SearchBox from "./components/SearchBox";
+import SearchScreen from "./views/SearchScreen";
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -38,6 +40,13 @@ function App() {
             <Link className="brand" to="/">
               TriSoul
             </Link>
+          </div>
+          <div>
+            <Route
+              render={({ history }) => (
+                <SearchBox history={history}></SearchBox>
+              )}
+            ></Route>
           </div>
           <div>
             <Link to="/cart">
@@ -102,6 +111,7 @@ function App() {
           <Route path="/placeorder" component={PlaceOrderScreen} />
           <Route path="/order/:id" component={OrderScreen} />
           <Route path="/orderhistory" component={OrderHistoryScreen} />
+          <Route path="/search/name/:name?" component={SearchScreen} exact />
           <PrivateRoute path="/profile" component={ProfileScreen} />
           <AdminRoute path="/productlist" component={ProductListScreen} />
           <AdminRoute path="/orderlist" component={OrderListScreen} />

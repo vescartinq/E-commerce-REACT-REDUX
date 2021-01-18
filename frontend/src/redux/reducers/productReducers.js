@@ -16,6 +16,22 @@ export const productListReducer = (
   }
 };
 
+export const productCategoryListReducer = (
+  state = { loading: true, products: [] },
+  action
+) => {
+  switch (action.type) {
+    case actionTypes.PRODUCT_CATEGORY_LIST_REQUEST:
+      return { loading: true };
+    case actionTypes.PRODUCT_CATEGORY_LIST_SUCCESS:
+      return { loading: false, categories: action.payload };
+    case actionTypes.PRODUCT_CATEGORY_LIST_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
 export const productDetailsReducer = (state = { loading: true }, action={}) => {
   switch (action.type) {
     case actionTypes.PRODUCT_DETAILS_REQUEST:

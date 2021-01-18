@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import { signout } from "./redux/actions/user-actions";
@@ -20,9 +20,15 @@ import SigninScreen from "./views/SigninScreen";
 import ShippingAddressScreen from "./views/ShippingAddressScreen";
 import PaymentMethodScreen from "./views/PaymentMethodScreen";
 import PlaceOrderScreen from "./views/PlaceOrderScreen";
+import SearchBox from "./components/SearchBox";
+import SearchScreen from "./views/SearchScreen";
+import { listProductCategories } from "./redux/actions/product-actions";
+import LoadingBox from "./components/LoadingBox";
+import MessageBox from "./components/MessageBox";
 
 function App() {
   const cart = useSelector((state) => state.cart);
+  const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
   const { cartItems } = cart;
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
@@ -30,14 +36,41 @@ function App() {
   const signoutHandler = () => {
     dispatch(signout());
   };
+
+  
+  const productCategoryList = useSelector((state) => state.productCategoryList);
+  const {
+    loading: loadingCategories,
+    error: errorCategories,
+    categories,
+  } = productCategoryList;
+  
+  useEffect(() => {
+    dispatch(listProductCategories());
+  }, [dispatch]);
+
   return (
     <BrowserRouter>
       <div className="grid-container">
         <header className="row">
           <div>
+          <button
+              type="button"
+              className="open-sidebar"
+              onClick={() => setSidebarIsOpen(true)}
+            >
+              <i className="fa fa-bars"></i>
+            </button>
             <Link className="brand" to="/">
               TriSoul
             </Link>
+          </div>
+          <div>
+            <Route
+              render={({ history }) => (
+                <SearchBox history={history}></SearchBox>
+              )}
+            ></Route>
           </div>
           <div>
             <Link to="/cart">
@@ -91,6 +124,36 @@ function App() {
             )}
           </div>
         </header>
+        <aside className={sidebarIsOpen ? 'open' : ''}>
+          <ul className="categories">
+            <li>
+              <strong>Categories</strong>
+              <button
+                onClick={() => setSidebarIsOpen(false)}
+                className="close-sidebar"
+                type="button"
+              >
+                <i className="fa fa-close"></i>
+              </button>
+            </li>
+            {loadingCategories ? (
+              <LoadingBox></LoadingBox>
+            ) : errorCategories ? (
+              <MessageBox variant="danger">{errorCategories}</MessageBox>
+            ) : (
+              categories.map((c) => (
+                <li key={c}>
+                  <Link
+                    to={`/search/category/${c}`}
+                    onClick={() => setSidebarIsOpen(false)}
+                  >
+                    {c}
+                  </Link>
+                </li>
+              ))
+            )}
+          </ul>
+        </aside>
         <main>
           <Route path="/cart/:id?" component={CartScreen} />
           <Route path="/product/:id" component={ProductScreen} exact/>
@@ -102,6 +165,9 @@ function App() {
           <Route path="/placeorder" component={PlaceOrderScreen} />
           <Route path="/order/:id" component={OrderScreen} />
           <Route path="/orderhistory" component={OrderHistoryScreen} />
+          <Route path="/search/name/:name?" component={SearchScreen} exact />
+          <Route path="/search/category/:category" component={SearchScreen} exact />
+          <Route path="/search/category/:category/name/:name" component={SearchScreen} exact />
           <PrivateRoute path="/profile" component={ProfileScreen} />
           <AdminRoute path="/productlist" component={ProductListScreen} />
           <AdminRoute path="/orderlist" component={OrderListScreen} />

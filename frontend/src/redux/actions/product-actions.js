@@ -3,12 +3,12 @@ import Axios from 'axios';
 import actionTypes from './action-types';
 
 
-export const listProducts = () => async (dispatch) => {
+export const listProducts = ({name='', category = '',}) => async (dispatch) => {
   dispatch({
     type: actionTypes.PRODUCT_LIST_REQUEST,
   });
   try {
-    const { data } = await Axios.get('/api/products');
+    const { data } = await Axios.get(`/api/products?name=${name}&category=${category}`);
     dispatch({ type: actionTypes.PRODUCT_LIST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: actionTypes.PRODUCT_LIST_FAIL, payload: error.message });
@@ -30,6 +30,19 @@ export const detailsProduct = (productId) => async (dispatch) => {
     });
   }
 };
+
+export const listProductCategories = () => async (dispatch) => {
+  dispatch({
+    type: actionTypes.PRODUCT_CATEGORY_LIST_REQUEST,
+  });
+  try {
+    const { data } = await Axios.get(`/api/products/categories`);
+    dispatch({ type: actionTypes.PRODUCT_CATEGORY_LIST_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({ type: actionTypes.PRODUCT_CATEGORY_LIST_FAIL, payload: error.message });
+  }
+};
+
 
 export const createProduct = () => async (dispatch, getState) => {
   dispatch({ type: actionTypes.PRODUCT_CREATE_REQUEST });

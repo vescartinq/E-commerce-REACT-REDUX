@@ -6,7 +6,6 @@ import MessageBox from '../components/MessageBox';
 import actionTypes from './../redux/actions/action-types'
 
 export default function ProductListScreen(props) {
-  const dispatch = useDispatch();
   
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
@@ -27,6 +26,29 @@ export default function ProductListScreen(props) {
     success: successDelete,
   } = productDelete;
 
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (successCreate) {
+      dispatch({ type: actionTypes.PRODUCT_CREATE_RESET });
+      props.history.push(`/product/${createdProduct._id}/edit`);
+    }
+    if (successDelete) {
+      dispatch({ type: actionTypes.PRODUCT_DELETE_RESET });
+    }
+    dispatch(
+      listProducts({})
+    );
+  }, [
+    createdProduct,
+    dispatch,
+    props.history,
+    successCreate,
+    successDelete,
+    userInfo._id,
+  ]);
+
   
   useEffect(() => {
     if (successCreate) {
@@ -36,7 +58,7 @@ export default function ProductListScreen(props) {
     if (successDelete) {
       dispatch({ type: actionTypes.PRODUCT_DELETE_RESET });
     }
-    dispatch(listProducts());
+    dispatch(listProducts({}));
   }, [createdProduct, dispatch, props.history, successCreate, successDelete]);
   
   const deleteHandler = (product) => {

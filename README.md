@@ -9,7 +9,7 @@
 ***
 
 
-### 1. General Info
+## 1. General Info
 Personal learning project to build an ecommerce website, with the objective to learn the essential tools and skills to design, develop and deploy a fully-functional website using MERN stack.
 
 The stack technologies used are: 
@@ -20,11 +20,16 @@ The stack technologies used are:
 - MONGODB and MONGOOSE as a database
 - Web deployed on HEROKU.
 
-### 2. Web Example
-You can see the app deployed here : 
+## 2. Web Example
+You can view the app online here : 
 https://trisoul.herokuapp.com/
 
-### 3. Technologies
+```
+adminName: admin@example.com
+password: 1234
+```
+
+## 3. Technologies
 A list of technologies used within the project:
 * [REACT]: Version 17.0.1 
 * [REACT-REDUX]: Version 7.2.2 
@@ -42,7 +47,7 @@ A list of technologies used within the project:
 * [AWS]
 * [HTML-CSS]: Grid, Flex and responsive design
 
-### 4. Installation
+## 4. Installation
 A little intro about the installation:
 
 ```

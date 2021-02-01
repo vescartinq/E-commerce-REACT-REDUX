@@ -1,24 +1,16 @@
-# E-commerce-REACT-REDUX
-
-Personal learning project to build an ecommerce website, with the objective to learn the essential tools and skills to design, develop and deploy a fully-functional website using MERN stack.
-
-The stack technologies used are: 
-- HTML and CSS (grid, flex and responsive design)
-- JAVASCRIPT
-- REACT library to build the frontend (using REDUX library)
-- NODE and EXPRESS framework to run web server and API endpoint
-- MONGODB and MONGOOSE as a database
-- Web deployed on HEROKU.
+# TRISOUL-E-commerce-REACT-REDUX
+***
 
 ## Table of Contents
+```
 1. [General Info](#general-info)
-1. [Web Example](#general-info)
-2. [Technologies](#web-example)
-3. [Installation](#installation)
+2. [Web Example](#web-example)
+3. [Technologies](#technologies)
+4. [Installation](#installation)
+```
 
 
-### General Info
-***
+### 1. General Info
 Personal learning project to build an ecommerce website, with the objective to learn the essential tools and skills to design, develop and deploy a fully-functional website using MERN stack.
 
 The stack technologies used are: 
@@ -29,12 +21,11 @@ The stack technologies used are:
 - MONGODB and MONGOOSE as a database
 - Web deployed on HEROKU.
 
-### Web Example
+### 2. Web Example
 You can see the app deployed here : 
 https://trisoul.herokuapp.com/
 
-## Technologies
-***
+### 3. Technologies
 A list of technologies used within the project:
 * [REACT]: Version 17.0.1 
 * [REACT-REDUX]: Version 7.2.2 
@@ -50,11 +41,11 @@ A list of technologies used within the project:
 * [MONGODB-ATLAS]
 * [PAY-PAL]
 * [AWS]
-* [HTML-CSS]:grid, flex and responsive design
+* [HTML-CSS]: Grid, Flex and responsive design
 
-## Installation
-***
+### 4. Installation
 A little intro about the installation:
+
 ```
 $ git clone https://github.com/vescartinq/TRISOUL-Triathlon-E-commerce-REACT-REDUX.git
 

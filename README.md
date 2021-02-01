@@ -1,4 +1,4 @@
-# TRISOUL-E-commerce-REACT-REDUX
+# TRISOUL-Triathlon-E-commerce-REACT-REDUX
 ***
 
 ## Table of Contents

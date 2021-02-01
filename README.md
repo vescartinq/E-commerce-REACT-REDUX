@@ -6,7 +6,7 @@
 2. [Web Example](#web-example)
 3. [Technologies](#technologies)
 4. [Installation](#installation)
-
+***
 
 
 ### 1. General Info

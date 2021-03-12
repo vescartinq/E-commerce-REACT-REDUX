@@ -8,7 +8,7 @@
 4. [Installation](#installation)
 ***
 
-<img src="images/trisoul1.jpg" width="10" height="10">
+<img src="images/trisoul1.jpg" width="100" height="100">
 
 
 ## 1. General Info

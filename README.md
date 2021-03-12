@@ -8,6 +8,8 @@
 4. [Installation](#installation)
 ***
 
+<img src="images/trisoul1.jpg" width="10" height="10">
+
 
 ## 1. General Info
 Personal learning project to build an ecommerce website, with the objective to learn the essential tools and skills to design, develop and deploy a fully-functional website using MERN stack.

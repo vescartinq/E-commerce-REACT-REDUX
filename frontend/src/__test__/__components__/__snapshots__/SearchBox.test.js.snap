@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBox component should render component 1`] = `
+<form
+  className="search"
+  onSubmit={[Function]}
+>
+  <div
+    className="row"
+  >
+    <input
+      id="q"
+      name="q"
+      onChange={[Function]}
+      type="text"
+    />
+    <button
+      className="primary"
+      type="submit"
+    >
+      <i
+        className="fa fa-search"
+      />
+    </button>
+  </div>
+</form>
+`;

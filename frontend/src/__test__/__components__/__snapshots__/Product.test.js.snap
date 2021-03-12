@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product should render <Product/> component 1`] = `
+<div
+  className="card"
+  key="1"
+>
+  <Link
+    to="/product/1"
+  >
+    <img
+      alt="algo"
+      className="medium"
+      src="https:://localhost/algo.jpg"
+    />
+  </Link>
+  <div
+    className="card-body"
+  >
+    <Link
+      to="/product/1"
+    >
+      <h2>
+        algo
+      </h2>
+    </Link>
+    <Rating
+      numReviews={1}
+      rating={1}
+    />
+    <div
+      className="price"
+    >
+      1
+      ,00 €
+    </div>
+  </div>
+</div>
+`;

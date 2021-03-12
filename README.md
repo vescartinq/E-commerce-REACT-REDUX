@@ -9,6 +9,9 @@
 ***
 
 <img src="images/trisoul1.jpg" width="200" height="100" >
+<img src="images/trisoul2.jpg" width="200" height="100" >
+<img src="images/trisoul3.jpg" width="200" height="100" >
+<img src="images/trisoul4.jpg" width="200" height="100" >
 
 
 ## 1. General Info
